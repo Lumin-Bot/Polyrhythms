@@ -1,21 +1,32 @@
-const screen = document.querySelector("#screen")
-const line = screen.getContext("2d")
 
-const draw = () => {
-    screen.width = screen.cilentWidth
-    screen.height = screen.cilentHeight
-}
+    const paper = document.querySelector(".paper")
+    const line = paper.getContext("2d")
 
-const start = {
-    x: screen.width * 0.1,
-    y: screen.height * 0.9
-}
+    const draw = () => {
+        paper.width = paper.cilentWidth
+        paper.height = paper.cilentHeight
+    }
 
-const end = {
-    x: screen.width * 0.9,
-    y: screen.height * 0.9
-}
+    const start = {
+        x: paper.width * 0.1,
+        y: paper.height * 0.9
+    }
 
-line
+    const end = {
+        x: paper.width * 0.9,
+        y: paper.height * 0.9
+    }
 
-draw()
+    line.strokeStyle = "white"
+    line.lineWidth = 6
+
+    line.beginPath()
+    line.moveTo(paper.width * 0.1, paper.height * 0.9)
+    line.lineTo(paper.width * 0.9, paper.height * 0.9)
+    line.stroke()
+
+    draw()
+
+
+
+
