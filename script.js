@@ -31,7 +31,7 @@ const draw = () => {
         y: paper.height * 0.9
     }
 
-    //Line
+    // Line
     line.strokeStyle = "white"
     line.lineWidth = 4
 
@@ -40,24 +40,22 @@ const draw = () => {
     line.lineTo(end.x, end.y)
     line.stroke()
 
-    //Arc
+    // Arc
     line.beginPath()
     line.arc(center.x, center.y, arcRadius, Math.PI, 2 * Math.PI)
     line.stroke()
 
-
-    //Circle
-    const velocity  = 0.5
+    // Distance = Time * Velocity
+    const velocity  = 1
     const distance = Math.PI + (elapsedTime * velocity)
     const modDistance = distance % maxAngle
     
+    // Movement
     adjustedDistance = modDistance >= Math.PI ? modDistance: maxAngle - modDistance
-    
-
-
     const x = center.x + arcRadius * Math.cos(adjustedDistance)
     const y = center.y + arcRadius * Math.sin(adjustedDistance)
 
+    // Ball
     line.fillStyle = "white"
     line.beginPath()
     line.arc(x, y, length * 0.065, 0, 2 * Math.PI)
